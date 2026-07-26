@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: #1a1f36;
+    --color-teal: #2a9d8f;
+    --color-gray-light: #f3f4f6;
+    --color-gray-medium: #6b7280;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-navy-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-teal-500/20 text-navy-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold text-navy-900;
+  }
+
+  p {
+    @apply font-sans text-navy-700;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-content mx-auto px-6 lg:px-8;
+  }
+
+  .prose-container {
+    @apply max-w-prose mx-auto;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-teal-500 text-white font-medium rounded-lg
+           transition-all duration-200 ease-out
+           hover:bg-teal-600 hover:shadow-lg hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           border-2 border-teal-500 text-teal-600 font-medium rounded-lg
+           transition-all duration-200 ease-out
+           hover:bg-teal-50 hover:border-teal-600 hover:text-teal-700
+           focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-card border border-gray-200 
+           shadow-card transition-all duration-300 ease-out
+           hover:shadow-card-hover hover:border-gray-300;
+  }
+
+  .card-interactive {
+    @apply card cursor-pointer hover:-translate-y-1;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent;
+  }
+
+  .section-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent;
+  }
+
+  /* Maturity level indicators */
+  .maturity-0 { @apply bg-maturity-0; }
+  .maturity-1 { @apply bg-maturity-1; }
+  .maturity-2 { @apply bg-maturity-2; }
+  .maturity-3 { @apply bg-maturity-3; }
+  .maturity-4 { @apply bg-maturity-4; }
+
+  /* Progress bar for assessment */
+  .progress-bar {
+    @apply h-1 bg-gray-200 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-teal-500 transition-all duration-500 ease-out;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+
+  /* Subtle background patterns */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Gradient overlays */
+  .gradient-fade-b {
+    background: linear-gradient(to bottom, transparent, white);
+  }
+
+  .gradient-fade-t {
+    background: linear-gradient(to top, transparent, white);
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
